@@ -1,10 +1,12 @@
-import React from 'react'
+// import React from 'react'
+import { connect } from 'react-redux';
+import buttonClicked from '../../actions/appActions'
 import { Link } from 'react-router-dom'
 import * as s from "./Header.styling"
 import { Container, Button } from '../../globalStyles'
 
 
-export function Header({orange, lightBg, imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headline, lightText, topLine, img, alt, start}) {
+function Header({clicked, buttonClicked, orange, lightBg, imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headline, lightText, topLine, img, alt, start}) {
     
     return (
         <>
@@ -17,7 +19,7 @@ export function Header({orange, lightBg, imgStart, lightTopLine, lightTextDesc, 
                                 <s.Heading lightText={lightText}>{headline}</s.Heading>
                                 <s.Subtitle lightTextDesc={lightTextDesc}>{description}</s.Subtitle>
                                 <Link to='/sign-up'>
-                                    <Button big fontBig orange={orange}>
+                                    <Button big fontBig orange={orange} onClick={() => buttonClicked(!clicked)}>
                                         {buttonLabel}
                                     </Button>
                                 </Link>
@@ -35,4 +37,14 @@ export function Header({orange, lightBg, imgStart, lightTopLine, lightTextDesc, 
     )
 };
 
+const mapStateToProps = state => {
+    return {
+      clicked: state.app.clicked
+    }
+  }
+  
+  const mapDispatchToProps = {
+    buttonClicked,
+  }
 
+ export const ConnectComponent = connect(mapStateToProps, mapDispatchToProps)(Header);

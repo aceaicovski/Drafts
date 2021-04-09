@@ -10,24 +10,27 @@ export const SignUpSection = styled.section`
 
 export const FormContainer = styled(Container)`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     
     ${Container}
 `;
 
 export const SubmitButton = styled(Button)`
-    margin-top: 10px;
+    margin-top: 10px;    
+    padding: 5px 10px;
+    height: auto;
+    display: inline;
     text-align: center;
-    width: 90%;
+    ${Button}
 `;
+
 
 export const SignUpFormWrap = styled.div`
     display: flex;
     flex-direction: row;
-	flex-wrap: wrap;
 	align-items: center;
     justify-content: space-evenly;
-    min-width: 600px;    
     padding: 30px 15px;
     background: #053C44;
     border-radius: 4px;
@@ -44,7 +47,7 @@ export const FormOption = styled.form`
     align-items: center;
     padding: 10px 15px;
     background: #fff;
-    /* height: 280px; */
+    width: 35%;
     border-radius: 4px;
     box-shadow: 5px 10px 18px #888888;
 
@@ -63,6 +66,9 @@ export const Or = styled.div`
     margin: 10px 5px;
 
 `;
+export const SocialMediaHeader = styled.h3`
+    text-align: center;
+`
 
 export const SocialMediaOption = styled.div`
     display: flex;
@@ -72,6 +78,8 @@ export const SocialMediaOption = styled.div`
     background: #fff;
     border-radius: 4px;
     box-shadow: 5px 10px 18px #888888;
+    width: 35%;
+
 
     @media screen and (max-width: 830px) {
         width: 60%;
@@ -85,6 +93,6 @@ export const FormInput = styled.input`
 `;
 
 export const PasswordVerification = styled.p`
-    color: #fff;
-    margin-top: 25px;
+    display: flex;
+    max-width: 90%;
 `;

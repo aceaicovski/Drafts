@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../../components'
+import { ConnectComponent } from '../../components'
 import { NewsSlider } from '../../components'
 import { homeObjOne, homeObjTwo } from './Data'
 import { Images } from '../../components/NewsCartsSlider/SliderData'
@@ -7,8 +7,8 @@ import { Images } from '../../components/NewsCartsSlider/SliderData'
 export const Home = () => {
     return (
         <>
-            <Header { ...homeObjOne } />
-            <Header { ...homeObjTwo } />
+            <ConnectComponent { ...homeObjOne } />
+            <ConnectComponent { ...homeObjTwo } />
             <NewsSlider slides={ Images } />
 
         </>
