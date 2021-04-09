@@ -69,7 +69,8 @@ export const SignUp = () => {
         <>
             <s.SignUpSection>
                 <s.FormContainer>
-                    <s.SignUpFormWrap>                   
+                    <s.SignUpFormWrap>
+                                      
                         <s.FormOption onSubmit={handleSubmit}>
                             <h1>Sign up</h1>                            
                             <s.FormInput type="text"
@@ -100,19 +101,21 @@ export const SignUp = () => {
                                         value={values.password2}
                                         onChange={handleChangeRegister}
                                          />
+                            {errors.password2 && <s.PasswordVerification>{errors.password2}</s.PasswordVerification>}                      
                                                        
                             <s.SubmitButton type="submit" fontBig orange>Sign me up</s.SubmitButton>
-                        </s.FormOption>
-                        <s.Or>OR</s.Or>
-                        <s.SocialMediaOption>
-                            <h3>Sign in with social network</h3>
-                            
-                            <s.SubmitButton fontBig>Log in with Facebook</s.SubmitButton>
-                            <s.SubmitButton fontBig>Log in with Instagram</s.SubmitButton>
-                            <s.SubmitButton fontBig>Log in with LinkedIn</s.SubmitButton>
-                        </s.SocialMediaOption>
-                        {errors.password2 && <s.PasswordVerification>{errors.password2}</s.PasswordVerification>}                      
+                          </s.FormOption>
+                          <s.Or>OR</s.Or>
+                          <s.SocialMediaOption>
+                              <s.SocialMediaHeader>Sign in with social network</s.SocialMediaHeader>
+                              
+                              <s.SubmitButton fontBig>Log in with Facebook</s.SubmitButton>
+                              <s.SubmitButton fontBig>Log in with Instagram</s.SubmitButton>
+                              <s.SubmitButton fontBig>Log in with LinkedIn</s.SubmitButton>
+                          </s.SocialMediaOption>
+                        
                     </s.SignUpFormWrap>
+                    
                 </s.FormContainer>
             </s.SignUpSection>
         </>

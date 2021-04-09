@@ -36,8 +36,7 @@ export const Button = styled.button`
     cursor: pointer;
 
     &:hover {
-        transition: all 0.3s ease-out;
-        background: #fff;
+        transition: all 0.3s ease-out;        
         background: ${({orange}) => (orange ? '#2a6973' : '#F2994A')};
         border-bottom: 2px solid black;
     }
